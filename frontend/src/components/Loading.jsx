@@ -1,10 +1,10 @@
 import React from 'react';
-import { Loader2 } from 'lucide-react';
+import { FaSpinner } from 'react-icons/fa';
 
 const Loading = ({ message = 'Loading tools and details...' }) => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '3.5rem 1rem' }}>
-      <Loader2 size={36} color="#E59F00" style={{ animation: 'spin 1s linear infinite' }} />
+      <FaSpinner size={32} color="#E59F00" style={{ animation: 'spin 1s linear infinite' }} />
       <p style={{ marginTop: '1rem', color: '#6B7280', fontSize: '0.95rem', fontWeight: 500 }}>{message}</p>
       <style>{`
         @keyframes spin {
@@ -17,4 +17,3 @@ const Loading = ({ message = 'Loading tools and details...' }) => {
 };
 
 export default Loading;
-

@@ -1,6 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Wrench, ShieldCheck, Heart, MapPin, Mail, Phone } from 'lucide-react';
+import { 
+  FaTools, 
+  FaShieldAlt, 
+  FaHeart, 
+  FaMapMarkerAlt, 
+  FaEnvelope, 
+  FaPhoneAlt 
+} from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -10,7 +17,7 @@ const Footer = () => {
           <div>
             <div className="navbar-logo" style={{ marginBottom: '1rem' }}>
               <div className="logo-badge">
-                <Wrench size={20} />
+                <FaTools size={18} />
               </div>
               <span>Share<span style={{ color: 'var(--primary)' }}>N</span>Tool</span>
             </div>
@@ -18,7 +25,7 @@ const Footer = () => {
               The neighborhood peer-to-peer equipment sharing marketplace. Rent quality power tools, ladders, vacuums, and DIY gear from verified neighbors nearby.
             </p>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--bg-accent-light)', padding: '0.4rem 0.8rem', borderRadius: 'var(--radius-sm)', border: '1px solid #FDE68A' }}>
-              <ShieldCheck size={16} color="#D48C00" />
+              <FaShieldAlt size={14} color="#D48C00" />
               <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#92400E' }}>Escrow Deposit Protected & Verified Neighbors</span>
             </div>
           </div>
@@ -48,14 +55,14 @@ const Footer = () => {
           <div className="footer-col">
             <h5>College Project Info</h5>
             <ul>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <MapPin size={14} color="#E59F00" /> Delhi NCR, India
+              <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <FaMapMarkerAlt size={13} color="#E59F00" /> Delhi NCR, India
               </li>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <Mail size={14} color="#E59F00" /> project@sharentool.local
+              <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <FaEnvelope size={13} color="#E59F00" /> project@sharentool.local
               </li>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <Phone size={14} color="#E59F00" /> +91 (Demo) 98765-TOOL
+              <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <FaPhoneAlt size={13} color="#E59F00" /> +91 (Demo) 98765-TOOL
               </li>
               <li style={{ marginTop: '0.75rem', fontSize: '0.825rem', color: '#6B7280' }}>
                 Built with Django REST Framework, SQLite, React & Vite.
@@ -67,7 +74,7 @@ const Footer = () => {
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} ShareNTool. Designed for College Project Presentation with soft yellow aesthetic.</p>
           <p style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-            Built with <Heart size={14} color="#EF4444" fill="#EF4444" /> for Sustainable Neighborhoods
+            Built with <FaHeart size={13} color="#EF4444" /> for Sustainable Neighborhoods
           </p>
         </div>
       </div>
@@ -76,4 +83,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

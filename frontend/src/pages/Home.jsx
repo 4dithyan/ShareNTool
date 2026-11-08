@@ -5,17 +5,20 @@ import ToolCard from '../components/ToolCard';
 import SearchBar from '../components/SearchBar';
 import Loading from '../components/Loading';
 import {
-  Wrench,
-  Sparkles,
-  ShieldCheck,
-  RotateCcw,
-  Banknote,
-  Search,
-  ArrowRight,
-  CheckCircle2,
-  Users,
-  ChevronRight
-} from 'lucide-react';
+  FaBolt,
+  FaBroom,
+  FaDraftingCompass,
+  FaLeaf,
+  FaPaintRoller,
+  FaWrench,
+  FaSearch,
+  FaShieldAlt,
+  FaRedo,
+  FaMoneyBillWave,
+  FaArrowRight,
+  FaChevronRight,
+  FaStar
+} from 'react-icons/fa';
 
 const Home = () => {
   const [tools, setTools] = useState([]);
@@ -33,7 +36,6 @@ const Home = () => {
     try {
       setLoading(true);
       const data = await toolService.getAllTools();
-      // Handle list or paginated response
       const items = Array.isArray(data) ? data : (data.results || []);
       setTools(items.slice(0, 6));
     } catch (err) {
@@ -48,12 +50,12 @@ const Home = () => {
   };
 
   const categories = [
-    { id: 'power-tools', name: 'Power Tools', icon: '⚡', desc: 'Drills, saws, sanders' },
-    { id: 'cleaning', name: 'Wet & Dry Vacuums', icon: '🧹', desc: 'Deep cleaners & steamers' },
-    { id: 'ladders-scaffolding', name: 'Ladders & Heights', icon: '🪜', desc: 'Step ladders, extensions' },
-    { id: 'gardening', name: 'Gardening & Mowers', icon: '🌱', desc: 'Lawn mowers & trimmers' },
-    { id: 'painting', name: 'Paint & Sprayers', icon: '🎨', desc: 'Airless spray guns & rollers' },
-    { id: 'hand-tools', name: 'Hand Toolkits', icon: '🧰', desc: 'Mechanic sockets & wrenches' },
+    { id: 'power-tools', name: 'Power Tools', icon: <FaBolt size={24} color="#D48C00" />, desc: 'Drills, saws, sanders' },
+    { id: 'cleaning', name: 'Wet & Dry Vacuums', icon: <FaBroom size={24} color="#D48C00" />, desc: 'Deep cleaners & steamers' },
+    { id: 'ladders-scaffolding', name: 'Ladders & Heights', icon: <FaDraftingCompass size={24} color="#D48C00" />, desc: 'Step ladders, extensions' },
+    { id: 'gardening', name: 'Gardening & Mowers', icon: <FaLeaf size={24} color="#D48C00" />, desc: 'Lawn mowers & trimmers' },
+    { id: 'painting', name: 'Paint & Sprayers', icon: <FaPaintRoller size={24} color="#D48C00" />, desc: 'Airless spray guns & rollers' },
+    { id: 'hand-tools', name: 'Hand Toolkits', icon: <FaWrench size={24} color="#D48C00" />, desc: 'Mechanic sockets & wrenches' },
   ];
 
   return (
@@ -64,7 +66,7 @@ const Home = () => {
           <div className="hero-grid">
             <div>
               <div className="hero-badge-pill">
-                <Sparkles size={15} color="#D48C00" />
+                <FaStar size={13} color="#D48C00" />
                 <span>The OLX of Tool Rentals • College Project Demo</span>
               </div>
 
@@ -92,7 +94,7 @@ const Home = () => {
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
                 <Link to="/browse" className="btn btn-primary btn-lg">
-                  Explore Nearby Tools <ArrowRight size={18} />
+                  Explore Nearby Tools <FaArrowRight size={14} />
                 </Link>
                 <Link to="/add-tool" className="btn btn-secondary btn-lg">
                   List Your Spare Tool
@@ -131,7 +133,7 @@ const Home = () => {
                   <span style={{ fontWeight: 800, fontSize: '1.2rem', color: '#1F2937' }}>₹249<span style={{ fontSize: '0.8rem', fontWeight: 500, color: '#6B7280' }}>/day</span></span>
                 </div>
                 <p style={{ color: '#6B7280', fontSize: '0.875rem', marginBottom: '1rem' }}>
-                  Includes 100-piece accessory kit. Verified owner Rahul Sharma with 5.0 ★ rating.
+                  Includes 100-piece accessory kit. Verified owner Rahul Sharma with 5.0 star rating.
                 </p>
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', background: 'var(--bg-accent-light)', padding: '0.85rem', borderRadius: 'var(--radius-sm)', border: '1px solid #FDE68A' }}>
@@ -162,7 +164,7 @@ const Home = () => {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.75rem' }}>
             <div className="card" style={{ padding: '1.75rem', textAlign: 'center' }}>
               <div style={{ width: 52, height: 52, borderRadius: '50%', background: 'var(--bg-accent-light)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.25rem' }}>
-                <Search size={24} color="#D48C00" />
+                <FaSearch size={20} color="#D48C00" />
               </div>
               <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem' }}>1. Find Nearby Tool</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Browse tools in your locality. Check daily rent, photos, and safety notes.</p>
@@ -170,7 +172,7 @@ const Home = () => {
 
             <div className="card" style={{ padding: '1.75rem', textAlign: 'center' }}>
               <div style={{ width: 52, height: 52, borderRadius: '50%', background: 'var(--bg-accent-light)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.25rem' }}>
-                <Banknote size={24} color="#D48C00" />
+                <FaMoneyBillWave size={20} color="#D48C00" />
               </div>
               <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem' }}>2. Book & Dummy Pay</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Pick rental dates. Total rent + refundable deposit are held securely in escrow.</p>
@@ -178,7 +180,7 @@ const Home = () => {
 
             <div className="card" style={{ padding: '1.75rem', textAlign: 'center' }}>
               <div style={{ width: 52, height: 52, borderRadius: '50%', background: 'var(--bg-accent-light)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.25rem' }}>
-                <ShieldCheck size={24} color="#D48C00" />
+                <FaShieldAlt size={20} color="#D48C00" />
               </div>
               <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem' }}>3. Handover with OTP</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Meet the neighbor, inspect the equipment, and exchange the 4-digit pickup OTP.</p>
@@ -186,7 +188,7 @@ const Home = () => {
 
             <div className="card" style={{ padding: '1.75rem', textAlign: 'center' }}>
               <div style={{ width: 52, height: 52, borderRadius: '50%', background: 'var(--bg-accent-light)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.25rem' }}>
-                <RotateCcw size={24} color="#D48C00" />
+                <FaRedo size={20} color="#D48C00" />
               </div>
               <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem' }}>4. Return & Deposit Back</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Return tool after use. Owner inputs return OTP and your deposit is refunded!</p>
@@ -204,7 +206,7 @@ const Home = () => {
               <h2 style={{ fontSize: '2.25rem' }}>Browse by Equipment Type</h2>
             </div>
             <Link to="/browse" className="btn btn-secondary">
-              View All Tools <ChevronRight size={16} />
+              View All Tools <FaChevronRight size={13} />
             </Link>
           </div>
 
@@ -216,7 +218,7 @@ const Home = () => {
                 className="card"
                 style={{ padding: '1.25rem', textAlign: 'center', transition: 'all 0.2s ease', cursor: 'pointer' }}
               >
-                <div style={{ fontSize: '2.2rem', marginBottom: '0.65rem' }}>{c.icon}</div>
+                <div style={{ marginBottom: '0.75rem', display: 'flex', justifyContent: 'center' }}>{c.icon}</div>
                 <h4 style={{ fontSize: '1rem', marginBottom: '0.25rem' }}>{c.name}</h4>
                 <p style={{ fontSize: '0.75rem', color: '#6B7280' }}>{c.desc}</p>
               </Link>
@@ -234,7 +236,7 @@ const Home = () => {
               <h2 style={{ fontSize: '2.25rem' }}>Available for Rent Today</h2>
             </div>
             <Link to="/browse" className="btn btn-primary">
-              Browse All Listings <ChevronRight size={16} />
+              Browse All Listings <FaChevronRight size={13} />
             </Link>
           </div>
 
@@ -261,4 +263,3 @@ const Home = () => {
 };
 
 export default Home;
-

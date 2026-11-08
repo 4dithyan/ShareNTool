@@ -4,10 +4,10 @@ import { toolService } from '../services/toolService';
 import ToolCard from '../components/ToolCard';
 import SearchBar from '../components/SearchBar';
 import Loading from '../components/Loading';
-import { Filter, SlidersHorizontal, RefreshCw } from 'lucide-react';
+import { FaSlidersH, FaSyncAlt } from 'react-icons/fa';
 
 const BrowseTools = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const [tools, setTools] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -55,12 +55,12 @@ const BrowseTools = () => {
 
   const categoryPills = [
     { id: '', label: 'All Items' },
-    { id: 'power-tools', label: '⚡ Power Tools' },
-    { id: 'cleaning', label: '🧹 Vacuum Cleaners' },
-    { id: 'ladders-scaffolding', label: '🪜 Ladders' },
-    { id: 'gardening', label: '🌱 Lawn & Garden' },
-    { id: 'painting', label: '🎨 Paint Sprayers' },
-    { id: 'hand-tools', label: '🧰 Hand Toolkits' },
+    { id: 'power-tools', label: 'Power Tools' },
+    { id: 'cleaning', label: 'Vacuum Cleaners' },
+    { id: 'ladders-scaffolding', label: 'Ladders' },
+    { id: 'gardening', label: 'Lawn & Garden' },
+    { id: 'painting', label: 'Paint Sprayers' },
+    { id: 'hand-tools', label: 'Hand Toolkits' },
   ];
 
   return (
@@ -103,7 +103,7 @@ const BrowseTools = () => {
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', background: '#FFFFFF', padding: '0.85rem 1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', marginBottom: '2rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
           <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#6B7280', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-            <SlidersHorizontal size={15} color="#D48C00" /> Filter:
+            <FaSlidersH size={14} color="#D48C00" /> Filter:
           </span>
 
           <select
@@ -150,7 +150,7 @@ const BrowseTools = () => {
             onClick={() => { setSearch(''); setCity(''); setCategory(''); setCondition(''); setMaxPrice(''); fetchTools(); }}
             className="btn btn-outline-primary"
           >
-            <RefreshCw size={16} /> Reset All Filters
+            <FaSyncAlt size={13} /> Reset All Filters
           </button>
         </div>
       ) : (
@@ -165,4 +165,3 @@ const BrowseTools = () => {
 };
 
 export default BrowseTools;
-

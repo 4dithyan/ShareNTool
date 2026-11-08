@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { Wrench, Key, AlertCircle } from 'lucide-react';
+import { FaTools, FaKey, FaExclamationCircle } from 'react-icons/fa';
 
 const Login = () => {
   const [username, setUsername] = useState('rahul_sharma');
@@ -9,7 +9,7 @@ const Login = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const { login, switchDummyUser } = useAuth();
+  const { login } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || '/';
@@ -43,7 +43,7 @@ const Login = () => {
       <div className="card" style={{ padding: '2.5rem' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div className="logo-badge" style={{ margin: '0 auto 1rem', width: 44, height: 44 }}>
-            <Wrench size={22} />
+            <FaTools size={20} />
           </div>
           <h2 style={{ fontSize: '1.75rem', marginBottom: '0.4rem' }}>Welcome Back</h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
@@ -53,7 +53,7 @@ const Login = () => {
 
         {error && (
           <div style={{ background: 'var(--danger-bg)', color: 'var(--danger-text)', padding: '0.75rem 1rem', borderRadius: 'var(--radius-sm)', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem' }}>
-            <AlertCircle size={16} />
+            <FaExclamationCircle size={15} />
             {error}
           </div>
         )}
@@ -61,7 +61,7 @@ const Login = () => {
         {/* Quick Demo Selector */}
         <div style={{ background: 'var(--bg-accent-light)', border: '1px solid #FDE68A', padding: '1rem', borderRadius: 'var(--radius-md)', marginBottom: '1.75rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.65rem' }}>
-            <Key size={15} color="#D48C00" />
+            <FaKey size={13} color="#D48C00" />
             <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#92400E', textTransform: 'uppercase' }}>
               One-Click Demo Personas
             </span>
@@ -121,4 +121,3 @@ const Login = () => {
 };
 
 export default Login;
-

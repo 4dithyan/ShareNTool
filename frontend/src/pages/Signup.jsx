@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { Wrench, CheckCircle } from 'lucide-react';
+import { FaTools } from 'react-icons/fa';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -37,7 +37,7 @@ const Signup = () => {
       <div className="card" style={{ padding: '2.5rem' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div className="logo-badge" style={{ margin: '0 auto 1rem', width: 44, height: 44 }}>
-            <Wrench size={22} />
+            <FaTools size={20} />
           </div>
           <h2 style={{ fontSize: '1.75rem', marginBottom: '0.4rem' }}>Join ShareNTool</h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
@@ -151,4 +151,3 @@ const Signup = () => {
 };
 
 export default Signup;
-

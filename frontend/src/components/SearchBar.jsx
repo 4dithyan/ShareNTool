@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, MapPin, SlidersHorizontal } from 'lucide-react';
+import { FaSearch, FaMapMarkerAlt, FaSlidersH } from 'react-icons/fa';
 
 const SearchBar = ({ search, setSearch, city, setCity, category, setCategory, onSearch }) => {
   const handleSubmit = (e) => {
@@ -10,7 +10,7 @@ const SearchBar = ({ search, setSearch, city, setCity, category, setCategory, on
   return (
     <form onSubmit={handleSubmit} className="search-bar-wrapper">
       <div className="search-field">
-        <Search size={18} color="#D48C00" />
+        <FaSearch size={16} color="#D48C00" />
         <input
           type="text"
           placeholder="Search drill, vacuum, ladder, mower, kit..."
@@ -22,7 +22,7 @@ const SearchBar = ({ search, setSearch, city, setCity, category, setCategory, on
       <div className="search-divider" />
 
       <div className="search-field">
-        <MapPin size={18} color="#D48C00" />
+        <FaMapMarkerAlt size={16} color="#D48C00" />
         <input
           type="text"
           placeholder="Area or City (e.g. South Delhi)"
@@ -34,7 +34,7 @@ const SearchBar = ({ search, setSearch, city, setCity, category, setCategory, on
       <div className="search-divider" />
 
       <div className="search-field" style={{ minWidth: 160 }}>
-        <SlidersHorizontal size={18} color="#D48C00" />
+        <FaSlidersH size={16} color="#D48C00" />
         <select value={category} onChange={(e) => setCategory(e.target.value)}>
           <option value="">All Categories</option>
           <option value="power-tools">Power Tools (Drills, Saws)</option>
@@ -54,4 +54,3 @@ const SearchBar = ({ search, setSearch, city, setCity, category, setCategory, on
 };
 
 export default SearchBar;
-

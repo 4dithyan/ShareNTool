@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toolService } from '../services/toolService';
 import { useAuth } from '../context/AuthContext';
-import { PlusCircle, Upload, ShieldCheck, Info } from 'lucide-react';
 
 const AddTool = () => {
   const { user } = useAuth();
@@ -245,4 +244,3 @@ const AddTool = () => {
 };
 
 export default AddTool;
-

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, ShieldCheck, CheckCircle2, Star } from 'lucide-react';
+import { FaMapMarkerAlt, FaCheckCircle } from 'react-icons/fa';
 
 const ToolCard = ({ tool }) => {
   const formatCurrency = (val) => `₹${parseFloat(val || 0).toLocaleString('en-IN')}`;
@@ -28,7 +28,7 @@ const ToolCard = ({ tool }) => {
           </span>
           {tool.is_available ? (
             <span className="badge badge-success" style={{ fontSize: '0.7rem' }}>
-              <CheckCircle2 size={12} /> Available
+              <FaCheckCircle size={11} /> Available
             </span>
           ) : (
             <span className="badge badge-warning" style={{ fontSize: '0.7rem' }}>
@@ -42,8 +42,8 @@ const ToolCard = ({ tool }) => {
         </Link>
 
         <div className="tool-card-meta">
-          <span style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
-            <MapPin size={14} color="#D48C00" />
+          <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+            <FaMapMarkerAlt size={13} color="#D48C00" />
             {tool.locality ? `${tool.locality}, ${tool.city}` : tool.city}
           </span>
         </div>
@@ -67,4 +67,3 @@ const ToolCard = ({ tool }) => {
 };
 
 export default ToolCard;
-

@@ -1,11 +1,18 @@
 import React from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { Wrench, PlusCircle, User, LogOut, ShieldCheck, ShoppingBag, Layers, Key } from 'lucide-react';
+import { 
+  FaTools, 
+  FaPlusCircle, 
+  FaUser, 
+  FaSignOutAlt, 
+  FaShoppingBag, 
+  FaThList, 
+  FaKey 
+} from 'react-icons/fa';
 
 const Navbar = () => {
   const { user, logout, switchDummyUser } = useAuth();
-  const navigate = useNavigate();
 
   const demoAccounts = [
     {
@@ -65,7 +72,7 @@ const Navbar = () => {
         {/* Brand Logo */}
         <Link to="/" className="navbar-logo">
           <div className="logo-badge">
-            <Wrench size={20} />
+            <FaTools size={18} />
           </div>
           <span>Share<span style={{ color: 'var(--primary)' }}>N</span>Tool</span>
         </Link>
@@ -81,12 +88,12 @@ const Navbar = () => {
             <>
               <li>
                 <NavLink to="/my-rentals" className={({ isActive }) => `navbar-link ${isActive ? 'active' : ''}`}>
-                  <ShoppingBag size={16} /> My Rentals
+                  <FaShoppingBag size={14} /> My Rentals
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/owner-bookings" className={({ isActive }) => `navbar-link ${isActive ? 'active' : ''}`}>
-                  <Layers size={16} /> Tool Bookings
+                  <FaThList size={14} /> Tool Bookings
                 </NavLink>
               </li>
               <li>
@@ -102,7 +109,7 @@ const Navbar = () => {
         <div className="navbar-actions">
           {/* Quick Demo Persona Switcher for College Presentation */}
           <div className="demo-switcher" title="College Project Demo: Switch Test User Instantly">
-            <Key size={14} color="#D48C00" />
+            <FaKey size={13} color="#D48C00" />
             <select value={user?.username || ''} onChange={handleDemoSwitch}>
               {demoAccounts.map(acc => (
                 <option key={acc.id} value={acc.username}>
@@ -113,7 +120,7 @@ const Navbar = () => {
           </div>
 
           <Link to="/add-tool" className="btn btn-primary btn-sm">
-            <PlusCircle size={16} /> Post Tool
+            <FaPlusCircle size={14} /> Post Tool
           </Link>
 
           {user ? (
@@ -127,12 +134,12 @@ const Navbar = () => {
                 <span style={{ fontWeight: 600 }}>{user.first_name || user.username}</span>
               </Link>
               <button onClick={logout} className="btn btn-secondary btn-sm" title="Logout">
-                <LogOut size={16} />
+                <FaSignOutAlt size={14} />
               </button>
             </div>
           ) : (
             <Link to="/login" className="btn btn-secondary btn-sm">
-              <User size={16} /> Dummy Login
+              <FaUser size={14} /> Dummy Login
             </Link>
           )}
         </div>
@@ -142,4 +149,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
