@@ -142,7 +142,7 @@ const ToolDetails = () => {
                   Listed by {tool.owner_details?.first_name || tool.owner_details?.username}
                 </h4>
                 <p style={{ fontSize: '0.825rem', color: '#6B7280' }}>
-                  Verified Neighbor • {tool.owner_details?.profile?.city || 'Delhi NCR'}
+                  Verified Neighbor • {tool.owner_details?.profile?.city || 'Kerala'}
                 </p>
               </div>
             </div>

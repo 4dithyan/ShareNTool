@@ -38,7 +38,7 @@ const Profile = () => {
         last_name: data.last_name || '',
         email: data.email || '',
         phone: data.profile?.phone || '',
-        city: data.profile?.city || 'South Delhi',
+        city: data.profile?.city || 'Kochi',
         bio: data.profile?.bio || ''
       });
     } catch (err) {
@@ -95,7 +95,7 @@ const Profile = () => {
                 </span>
               </div>
               <p style={{ color: '#6B7280', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <FaMapMarkerAlt size={14} color="#D48C00" /> {profileData.profile?.city || 'Delhi NCR'}
+                <FaMapMarkerAlt size={14} color="#D48C00" /> {profileData.profile?.city || 'Kerala'}
               </p>
             </div>
           </div>

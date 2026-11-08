@@ -155,7 +155,7 @@ const AddTool = () => {
                 type="text"
                 name="locality"
                 className="form-control"
-                placeholder="e.g. Hauz Khas or Sector 56"
+                placeholder="e.g. Kaloor, Edappally, or Pattom"
                 value={formData.locality}
                 onChange={handleChange}
                 required

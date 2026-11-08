@@ -44,7 +44,7 @@ const MyTools = () => {
         <div>
           <h1 style={{ fontSize: '2rem', marginBottom: '0.35rem' }}>My Listed Tools</h1>
           <p style={{ color: 'var(--text-muted)' }}>
-            Manage the equipment you have made available for neighbors in {user?.profile?.city || 'Delhi NCR'}.
+            Manage the equipment you have made available for neighbors in {user?.profile?.city || 'Kochi, Kerala'}.
           </p>
         </div>
         <Link to="/add-tool" className="btn btn-primary">
