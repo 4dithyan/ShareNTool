@@ -18,3 +18,4 @@ class ToolSerializer(serializers.ModelSerializer):
             'rules_and_safety', 'created_at', 'updated_at'
         ]
         read_only_fields = ['owner', 'created_at', 'updated_at']
+

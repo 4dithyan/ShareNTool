@@ -31,3 +31,4 @@ class RegisterSerializer(serializers.ModelSerializer):
         user = User.objects.create_user(**validated_data)
         UserProfile.objects.create(user=user, phone=phone, city=city, address=address)
         return user
+

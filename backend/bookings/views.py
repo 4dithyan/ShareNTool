@@ -53,3 +53,4 @@ class BookingViewSet(viewsets.ModelViewSet):
             booking.save()
             return Response({'message': f'Status updated to {new_status}', 'booking': self.get_serializer(booking).data})
         return Response({'error': 'No status provided'}, status=status.HTTP_400_BAD_REQUEST)
+

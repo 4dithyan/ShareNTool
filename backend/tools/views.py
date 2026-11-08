@@ -38,3 +38,4 @@ class ToolViewSet(viewsets.ModelViewSet):
             tools = Tool.objects.all().order_by('-created_at')[:3]
         serializer = self.get_serializer(tools, many=True)
         return Response(serializer.data)
+

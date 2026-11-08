@@ -8,3 +8,4 @@ router.register(r'', ToolViewSet, basename='tools')
 urlpatterns = [
     path('', include(router.urls)),
 ]
+

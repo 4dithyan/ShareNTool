@@ -27,3 +27,4 @@ class BookingSerializer(serializers.ModelSerializer):
         validated_data['handover_otp'] = str(random.randint(1000, 9999))
         validated_data['return_otp'] = str(random.randint(1000, 9999))
         return super().create(validated_data)
+

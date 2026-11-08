@@ -8,3 +8,4 @@ urlpatterns = [
     path('profile/<int:user_id>/', ProfileView.as_view(), name='profile-detail'),
     path('dummy-users/', DummyUsersListView.as_view(), name='dummy-users'),
 ]
+

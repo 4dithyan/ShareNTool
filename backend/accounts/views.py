@@ -94,3 +94,4 @@ class DummyUsersListView(APIView):
     def get(self, request):
         users = User.objects.all()
         return Response(UserSerializer(users, many=True).data)
+
