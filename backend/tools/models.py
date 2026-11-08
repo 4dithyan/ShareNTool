@@ -26,8 +26,8 @@ class Tool(models.Model):
     description = models.TextField()
     price_per_day = models.DecimalField(max_digits=8, decimal_places=2)
     security_deposit = models.DecimalField(max_digits=8, decimal_places=2, default=500.00)
-    city = models.CharField(max_length=100, default='New Delhi')
-    locality = models.CharField(max_length=150, default='Connaught Place')
+    city = models.CharField(max_length=100, default='Kochi')
+    locality = models.CharField(max_length=150, default='Kaloor, Ernakulam')
     condition = models.CharField(max_length=20, choices=TOOL_CONDITION, default='good')
     image_url = models.CharField(
         max_length=500,

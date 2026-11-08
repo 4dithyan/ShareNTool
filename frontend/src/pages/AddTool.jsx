@@ -13,7 +13,7 @@ const AddTool = () => {
     brand: '',
     price_per_day: '',
     security_deposit: '',
-    city: user?.profile?.city || 'South Delhi',
+    city: user?.profile?.city || 'Kochi',
     locality: '',
     condition: 'good',
     image_url: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=800&q=80',

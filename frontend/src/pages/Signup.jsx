@@ -10,7 +10,7 @@ const Signup = () => {
     password: '',
     first_name: '',
     last_name: '',
-    city: 'New Delhi',
+    city: 'Kochi',
     phone: '',
     address: ''
   });
@@ -120,7 +120,7 @@ const Signup = () => {
                 className="form-control"
                 value={formData.city}
                 onChange={handleChange}
-                placeholder="e.g. New Delhi"
+                placeholder="e.g. Kochi or Trivandrum"
                 required
               />
             </div>

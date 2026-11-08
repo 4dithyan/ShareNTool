@@ -121,7 +121,7 @@ const Home = () => {
             <div>
               <div className="hero-card-preview">
                 <div className="badge badge-yellow hero-card-tag">
-                  Featured in South Delhi
+                  Featured in Kochi, Kerala
                 </div>
                 <img
                   src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=800&q=80"
@@ -133,7 +133,7 @@ const Home = () => {
                   <span style={{ fontWeight: 800, fontSize: '1.2rem', color: '#1F2937' }}>₹249<span style={{ fontSize: '0.8rem', fontWeight: 500, color: '#6B7280' }}>/day</span></span>
                 </div>
                 <p style={{ color: '#6B7280', fontSize: '0.875rem', marginBottom: '1rem' }}>
-                  Includes 100-piece accessory kit. Verified owner Rahul Sharma with 5.0 star rating.
+                  Includes 100-piece accessory kit. Verified owner Rahul Kurian (Kaloor, Kochi) with 5.0 star rating.
                 </p>
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', background: 'var(--bg-accent-light)', padding: '0.85rem', borderRadius: 'var(--radius-sm)', border: '1px solid #FDE68A' }}>

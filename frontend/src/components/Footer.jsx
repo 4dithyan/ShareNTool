@@ -56,7 +56,7 @@ const Footer = () => {
             <h5>College Project Info</h5>
             <ul>
               <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <FaMapMarkerAlt size={13} color="#E59F00" /> Delhi NCR, India
+                <FaMapMarkerAlt size={13} color="#E59F00" /> Kerala, India (Kochi • Trivandrum • Kozhikode)
               </li>
               <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <FaEnvelope size={13} color="#E59F00" /> project@sharentool.local

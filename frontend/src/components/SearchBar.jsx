@@ -25,7 +25,7 @@ const SearchBar = ({ search, setSearch, city, setCity, category, setCategory, on
         <FaMapMarkerAlt size={16} color="#D48C00" />
         <input
           type="text"
-          placeholder="Area or City (e.g. South Delhi)"
+          placeholder="Area or City (e.g. Kochi, Trivandrum, Kozhikode)"
           value={city}
           onChange={(e) => setCity(e.target.value)}
         />

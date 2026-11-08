@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { FaTools, FaKey, FaExclamationCircle } from 'react-icons/fa';
 
 const Login = () => {
-  const [username, setUsername] = useState('rahul_sharma');
+  const [username, setUsername] = useState('rahul_kurian');
   const [password, setPassword] = useState('password123');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -15,9 +15,9 @@ const Login = () => {
   const from = location.state?.from?.pathname || '/';
 
   const demoAccounts = [
-    { username: 'rahul_sharma', name: 'Rahul Sharma (Owner & Renter)', role: 'South Delhi' },
-    { username: 'priya_patel', name: 'Priya Patel (Ladders & Mowers)', role: 'Gurugram' },
-    { username: 'amit_verma', name: 'Amit Verma (Garage & Sprayers)', role: 'Noida' },
+    { username: 'rahul_kurian', name: 'Rahul Kurian (Owner & Renter)', role: 'Kochi' },
+    { username: 'anjali_menon', name: 'Anjali Menon (Ladders & Mowers)', role: 'Trivandrum' },
+    { username: 'faisal_rahman', name: 'Faisal Rahman (Garage & Sprayers)', role: 'Kozhikode' },
   ];
 
   const handleSubmit = async (e) => {

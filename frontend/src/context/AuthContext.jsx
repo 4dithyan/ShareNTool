@@ -16,21 +16,21 @@ export const AuthProvider = ({ children }) => {
     }
     return {
       id: 1,
-      username: 'rahul_sharma',
+      username: 'rahul_kurian',
       first_name: 'Rahul',
-      last_name: 'Sharma',
-      email: 'rahul@example.com',
+      last_name: 'Kurian',
+      email: 'rahul.k@example.com',
       profile: {
-        city: 'South Delhi',
-        phone: '+91 98765 43210',
-        bio: 'Home DIY enthusiast & friendly neighborhood tool lender!',
+        city: 'Kochi',
+        phone: '+91 98470 12345',
+        bio: 'Home DIY enthusiast in Ernakulam & friendly neighborhood tool lender!',
         avatar_url: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80',
         is_verified: true,
       }
     };
   });
 
-  const [token, setToken] = useState(() => localStorage.getItem('snt_token') || 'dummy-token-1-rahul_sharma');
+  const [token, setToken] = useState(() => localStorage.getItem('snt_token') || 'dummy-token-1-rahul_kurian');
 
   useEffect(() => {
     if (user) {
@@ -57,15 +57,15 @@ export const AuthProvider = ({ children }) => {
     } catch (err) {
       // Dummy fallback if backend is momentarily unreachable: allow instant college test login
       const dummyUser = {
-        id: username === 'priya_patel' ? 2 : username === 'amit_verma' ? 3 : 1,
+        id: username === 'anjali_menon' ? 2 : username === 'faisal_rahman' ? 3 : 1,
         username: username,
         first_name: username.split('_')[0].toUpperCase(),
         last_name: 'User',
         email: `${username}@example.com`,
         profile: {
-          city: 'Delhi NCR',
-          phone: '+91 98765 00000',
-          bio: 'College test demo profile',
+          city: username === 'anjali_menon' ? 'Trivandrum' : username === 'faisal_rahman' ? 'Kozhikode' : 'Kochi',
+          phone: '+91 98470 00000',
+          bio: 'College test demo profile in Kerala',
           avatar_url: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80',
           is_verified: true
         }
@@ -90,7 +90,7 @@ export const AuthProvider = ({ children }) => {
         last_name: userData.last_name || '',
         email: userData.email,
         profile: {
-          city: userData.city || 'Delhi NCR',
+          city: userData.city || 'Kochi, Kerala',
           phone: userData.phone || '',
           bio: 'College test user',
           avatar_url: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80',
