@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { 
   FaTools, 
   FaShieldAlt, 
-  FaHeart, 
   FaMapMarkerAlt, 
   FaEnvelope, 
   FaPhoneAlt 
@@ -48,33 +47,29 @@ const Footer = () => {
               <li><Link to="/add-tool">Rent Out Your Spare Tools</Link></li>
               <li><a href="#how-it-works">Handover OTP Safety Check</a></li>
               <li><a href="#security">Refundable Security Deposit</a></li>
-              <li><Link to="/login">College Demo Login</Link></li>
+              <li><Link to="/login">Demo Login</Link></li>
             </ul>
           </div>
 
           <div className="footer-col">
-            <h5>College Project Info</h5>
+            <h5>Kerala Community Hub</h5>
             <ul>
               <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <FaMapMarkerAlt size={13} color="#E59F00" /> Kerala, India (Kochi • Trivandrum • Kozhikode)
               </li>
               <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <FaEnvelope size={13} color="#E59F00" /> project@sharentool.local
+                <FaEnvelope size={13} color="#E59F00" /> support@sharentool.in
               </li>
               <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <FaPhoneAlt size={13} color="#E59F00" /> +91 (Demo) 98765-TOOL
-              </li>
-              <li style={{ marginTop: '0.75rem', fontSize: '0.825rem', color: '#6B7280' }}>
-                Built with Django REST Framework, SQLite, React & Vite.
+                <FaPhoneAlt size={13} color="#E59F00" /> +91 (Demo) 98470-TOOL
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} ShareNTool. Designed for College Project Presentation with soft yellow aesthetic.</p>
-          <p style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-            Built with <FaHeart size={13} color="#EF4444" /> for Sustainable Neighborhoods
+        <div className="footer-bottom" style={{ justifyContent: 'center', textAlign: 'center' }}>
+          <p style={{ fontWeight: 600, color: '#6B7280', fontSize: '0.875rem' }}>
+            ShareNTool
           </p>
         </div>
       </div>
