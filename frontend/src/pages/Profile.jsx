@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { authService } from '../services/authService';
 import { useAuth } from '../context/AuthContext';
 import Loading from '../components/Loading';
-import { User, MapPin, Phone, Mail, ShieldCheck, CheckCircle2, Award } from 'lucide-react';
+import { FaMapMarkerAlt, FaShieldAlt, FaCheckCircle } from 'react-icons/fa';
 
 const Profile = () => {
   const { userId } = useParams();
@@ -73,7 +73,7 @@ const Profile = () => {
     <div className="container" style={{ padding: '3.5rem 1rem', maxWidth: 760 }}>
       {savedMsg && (
         <div style={{ background: '#ECFDF5', color: '#065F46', padding: '0.85rem 1rem', borderRadius: 'var(--radius-md)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 600 }}>
-          <CheckCircle2 size={18} /> Profile details saved successfully!
+          <FaCheckCircle size={16} /> Profile details saved successfully!
         </div>
       )}
 
@@ -91,11 +91,11 @@ const Profile = () => {
                   {profileData.first_name} {profileData.last_name || profileData.username}
                 </h1>
                 <span className="badge badge-success" style={{ fontSize: '0.75rem' }}>
-                  <ShieldCheck size={12} /> Verified
+                  <FaShieldAlt size={11} /> Verified
                 </span>
               </div>
               <p style={{ color: '#6B7280', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <MapPin size={15} color="#D48C00" /> {profileData.profile?.city || 'Delhi NCR'}
+                <FaMapMarkerAlt size={14} color="#D48C00" /> {profileData.profile?.city || 'Delhi NCR'}
               </p>
             </div>
           </div>
@@ -198,7 +198,7 @@ const Profile = () => {
               </div>
               <div style={{ padding: '0.85rem', background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-sm)' }}>
                 <span style={{ fontSize: '0.75rem', color: '#6B7280', display: 'block' }}>Trust Level</span>
-                <span style={{ fontWeight: 700, fontSize: '0.9rem', color: '#D48C00' }}>★ Top Contributor</span>
+                <span style={{ fontWeight: 700, fontSize: '0.9rem', color: '#D48C00' }}>Top Contributor</span>
               </div>
             </div>
           </div>
@@ -209,4 +209,3 @@ const Profile = () => {
 };
 
 export default Profile;
-

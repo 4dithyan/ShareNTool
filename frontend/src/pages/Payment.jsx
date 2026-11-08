@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { bookingService } from '../services/bookingService';
 import { paymentService } from '../services/paymentService';
 import Loading from '../components/Loading';
-import { ShieldCheck, CreditCard, Smartphone, Building2, CheckCircle2 } from 'lucide-react';
+import { 
+  FaShieldAlt, 
+  FaCreditCard, 
+  FaMobileAlt, 
+  FaMoneyBillWave, 
+  FaCheckCircle 
+} from 'react-icons/fa';
 
 const Payment = () => {
   const { bookingId } = useParams();
-  const navigate = useNavigate();
 
   const [booking, setBooking] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -61,7 +66,7 @@ const Payment = () => {
       <div className="container" style={{ padding: '4rem 1rem', maxWidth: 600 }}>
         <div className="card" style={{ padding: '3rem', textAlign: 'center', border: '2px solid #10B981' }}>
           <div style={{ width: 64, height: 64, borderRadius: '50%', background: '#ECFDF5', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.25rem' }}>
-            <CheckCircle2 size={36} color="#10B981" />
+            <FaCheckCircle size={32} color="#10B981" />
           </div>
 
           <h1 style={{ fontSize: '1.8rem', color: '#065F46', marginBottom: '0.5rem' }}>
@@ -134,7 +139,7 @@ const Payment = () => {
                 onChange={() => setPaymentMethod('upi')}
                 style={{ accentColor: 'var(--primary)' }}
               />
-              <Smartphone size={22} color="#D48C00" />
+              <FaMobileAlt size={20} color="#D48C00" />
               <div>
                 <strong style={{ display: 'block', fontSize: '0.95rem' }}>UPI (Google Pay / PhonePe / Paytm)</strong>
                 <span style={{ fontSize: '0.8rem', color: '#6B7280' }}>Instant verification via simulated UPI handle</span>
@@ -162,7 +167,7 @@ const Payment = () => {
                 onChange={() => setPaymentMethod('card')}
                 style={{ accentColor: 'var(--primary)' }}
               />
-              <CreditCard size={22} color="#D48C00" />
+              <FaCreditCard size={18} color="#D48C00" />
               <div>
                 <strong style={{ display: 'block', fontSize: '0.95rem' }}>Credit / Debit Card (Demo)</strong>
                 <span style={{ fontSize: '0.8rem', color: '#6B7280' }}>Visa, MasterCard, RuPay dummy test card</span>
@@ -190,7 +195,7 @@ const Payment = () => {
                 onChange={() => setPaymentMethod('cash_on_pickup')}
                 style={{ accentColor: 'var(--primary)' }}
               />
-              <Building2 size={22} color="#D48C00" />
+              <FaMoneyBillWave size={18} color="#D48C00" />
               <div>
                 <strong style={{ display: 'block', fontSize: '0.95rem' }}>Pay Cash to Owner at Pickup</strong>
                 <span style={{ fontSize: '0.8rem', color: '#6B7280' }}>Pay directly during physical handover</span>
@@ -262,7 +267,7 @@ const Payment = () => {
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'var(--bg-accent-light)', padding: '0.75rem', borderRadius: 'var(--radius-sm)', border: '1px solid #FDE68A', fontSize: '0.775rem', color: '#92400E' }}>
-            <ShieldCheck size={16} />
+            <FaShieldAlt size={14} />
             <span>Escrow protected. Security deposit refunded upon verified return.</span>
           </div>
         </div>
@@ -272,4 +277,3 @@ const Payment = () => {
 };
 
 export default Payment;
-

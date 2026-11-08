@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { bookingService } from '../services/bookingService';
 import { useAuth } from '../context/AuthContext';
 import Loading from '../components/Loading';
-import { Key, RotateCcw, AlertTriangle, CheckCircle2, Clock } from 'lucide-react';
+import { FaKey, FaUndo, FaExclamationTriangle } from 'react-icons/fa';
 
 const MyBookings = () => {
   const { user } = useAuth();
@@ -139,18 +139,18 @@ const MyBookings = () => {
 
                 {booking.status === 'approved' && (
                   <Link to={`/handover/${booking.id}`} className="btn btn-primary btn-sm">
-                    <Key size={14} /> Open Handover Screen
+                    <FaKey size={13} /> Open Handover Screen
                   </Link>
                 )}
 
                 {booking.status === 'active' && (
                   <Link to={`/return-tool/${booking.id}`} className="btn btn-primary btn-sm">
-                    <RotateCcw size={14} /> Return Tool to Owner
+                    <FaUndo size={13} /> Return Tool to Owner
                   </Link>
                 )}
 
                 <Link to={`/damage-report/${booking.id}`} className="btn btn-secondary btn-sm" style={{ color: '#DC2626' }}>
-                  <AlertTriangle size={14} /> Report Issue / Damage
+                  <FaExclamationTriangle size={13} /> Report Issue / Damage
                 </Link>
 
                 <Link to={`/tools/${booking.tool}`} className="btn btn-secondary btn-sm">
@@ -166,4 +166,3 @@ const MyBookings = () => {
 };
 
 export default MyBookings;
-

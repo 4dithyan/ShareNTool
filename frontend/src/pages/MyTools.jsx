@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { toolService } from '../services/toolService';
 import { useAuth } from '../context/AuthContext';
 import Loading from '../components/Loading';
-import { PlusCircle, Edit, Trash2, Eye, CheckCircle2, XCircle } from 'lucide-react';
+import { FaPlusCircle, FaEdit, FaTrashAlt, FaEye } from 'react-icons/fa';
 
 const MyTools = () => {
   const { user } = useAuth();
@@ -48,7 +48,7 @@ const MyTools = () => {
           </p>
         </div>
         <Link to="/add-tool" className="btn btn-primary">
-          <PlusCircle size={16} /> Add New Tool
+          <FaPlusCircle size={14} /> Add New Tool
         </Link>
       </div>
 
@@ -91,13 +91,13 @@ const MyTools = () => {
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
                 <Link to={`/tools/${tool.id}`} className="btn btn-secondary btn-sm" title="Preview Public Page">
-                  <Eye size={15} /> View
+                  <FaEye size={13} /> View
                 </Link>
                 <Link to={`/edit-tool/${tool.id}`} className="btn btn-secondary btn-sm" title="Edit Listing">
-                  <Edit size={15} /> Edit
+                  <FaEdit size={13} /> Edit
                 </Link>
                 <button onClick={() => handleDelete(tool.id)} className="btn btn-sm btn-secondary" style={{ color: '#EF4444' }} title="Delete Listing">
-                  <Trash2 size={15} />
+                  <FaTrashAlt size={13} />
                 </button>
               </div>
             </div>
@@ -109,4 +109,3 @@ const MyTools = () => {
 };
 
 export default MyTools;
-

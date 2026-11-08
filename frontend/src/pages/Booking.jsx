@@ -4,7 +4,7 @@ import { toolService } from '../services/toolService';
 import { bookingService } from '../services/bookingService';
 import { useAuth } from '../context/AuthContext';
 import Loading from '../components/Loading';
-import { Calendar, ShieldCheck, Clock, ArrowRight } from 'lucide-react';
+import { FaClock, FaArrowRight } from 'react-icons/fa';
 
 const Booking = () => {
   const { toolId } = useParams();
@@ -19,7 +19,6 @@ const Booking = () => {
   const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
-    // Default start date today, end date tomorrow
     const today = new Date().toISOString().split('T')[0];
     const tomorrow = new Date(Date.now() + 86400000 * 2).toISOString().split('T')[0];
     setStartDate(today);
@@ -73,7 +72,6 @@ const Booking = () => {
       };
 
       const newBooking = await bookingService.createBooking(payload);
-      // Redirect straight to dummy payment gateway
       navigate(`/payment/${newBooking.id}`);
     } catch (err) {
       console.error('Failed to create booking:', err);
@@ -136,8 +134,8 @@ const Booking = () => {
             </div>
 
             <div style={{ background: '#FAF9F5', padding: '1rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', marginBottom: '1.5rem', fontSize: '0.85rem' }}>
-              <div style={{ fontWeight: 700, color: '#1F2937', marginBottom: '0.25rem', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                <Clock size={15} color="#D48C00" /> Handover OTP Security
+              <div style={{ fontWeight: 700, color: '#1F2937', marginBottom: '0.25rem', display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+                <FaClock size={14} color="#D48C00" /> Handover OTP Security
               </div>
               <p style={{ color: '#6B7280' }}>
                 Once your payment is authorized in escrow, you will receive a 4-digit pickup code. Hand this to the owner during inspection to release the equipment.
@@ -145,7 +143,7 @@ const Booking = () => {
             </div>
 
             <button type="submit" className="btn btn-primary btn-lg" style={{ width: '100%' }} disabled={submitting}>
-              {submitting ? 'Creating Booking...' : 'Proceed to Payment Gateway'} <ArrowRight size={18} />
+              {submitting ? 'Creating Booking...' : 'Proceed to Payment Gateway'} <FaArrowRight size={14} />
             </button>
           </form>
         </div>
@@ -191,7 +189,7 @@ const Booking = () => {
           </div>
 
           <div style={{ background: 'var(--bg-accent-light)', padding: '0.75rem', borderRadius: 'var(--radius-sm)', border: '1px solid #FDE68A', fontSize: '0.775rem', color: '#92400E' }}>
-            ✓ Deposit returned within 24 hours of safe tool return.
+            Deposit returned within 24 hours of safe tool return.
           </div>
         </div>
       </div>
@@ -200,4 +198,3 @@ const Booking = () => {
 };
 
 export default Booking;
-

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { toolService } from '../services/toolService';
 import Loading from '../components/Loading';
-import { Star, MessageSquare } from 'lucide-react';
+import { FaStar } from 'react-icons/fa';
 
 const Reviews = () => {
   const [searchParams] = useSearchParams();
@@ -55,8 +55,10 @@ const Reviews = () => {
                     Reviewed tool: #{rev.tool}
                   </span>
                 </div>
-                <div style={{ color: '#D48C00', fontSize: '1rem', fontWeight: 800 }}>
-                  {'★'.repeat(rev.rating)}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.2rem' }}>
+                  {[...Array(rev.rating)].map((_, i) => (
+                    <FaStar key={i} size={14} color="#D48C00" />
+                  ))}
                 </div>
               </div>
               <p style={{ color: '#374151', fontSize: '0.925rem' }}>
@@ -71,4 +73,3 @@ const Reviews = () => {
 };
 
 export default Reviews;
-

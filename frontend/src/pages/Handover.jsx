@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { bookingService } from '../services/bookingService';
 import { useAuth } from '../context/AuthContext';
 import Loading from '../components/Loading';
-import { Key, ShieldCheck, CheckCircle2, AlertCircle, ArrowLeft } from 'lucide-react';
+import { FaKey, FaCheckCircle, FaExclamationCircle, FaArrowLeft } from 'react-icons/fa';
 
 const Handover = () => {
   const { bookingId } = useParams();
   const { user } = useAuth();
-  const navigate = useNavigate();
 
   const [booking, setBooking] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -59,13 +58,13 @@ const Handover = () => {
   return (
     <div className="container" style={{ padding: '3.5rem 1rem', maxWidth: 680 }}>
       <Link to="/my-rentals" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', color: '#6B7280', fontSize: '0.9rem', marginBottom: '1.5rem', fontWeight: 600 }}>
-        <ArrowLeft size={16} /> Back to Rentals
+        <FaArrowLeft size={14} /> Back to Rentals
       </Link>
 
       <div className="card" style={{ padding: '2.5rem' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ width: 56, height: 56, borderRadius: '50%', background: 'var(--bg-accent-light)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1rem', border: '1px solid #FDE68A' }}>
-            <Key size={26} color="#D48C00" />
+            <FaKey size={22} color="#D48C00" />
           </div>
           <span className="badge badge-yellow" style={{ marginBottom: '0.5rem' }}>Step 3 • Physical Pickup</span>
           <h1 style={{ fontSize: '1.85rem', marginBottom: '0.4rem' }}>Tool Handover Verification</h1>
@@ -77,7 +76,7 @@ const Handover = () => {
         {success ? (
           <div style={{ textAlign: 'center', padding: '1rem 0' }}>
             <div style={{ width: 64, height: 64, borderRadius: '50%', background: '#ECFDF5', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.25rem' }}>
-              <CheckCircle2 size={36} color="#10B981" />
+              <FaCheckCircle size={32} color="#10B981" />
             </div>
             <h2 style={{ fontSize: '1.5rem', color: '#065F46', marginBottom: '0.5rem' }}>Handover Verified!</h2>
             <p style={{ color: '#4B5563', marginBottom: '2rem' }}>
@@ -111,7 +110,7 @@ const Handover = () => {
 
             {error && (
               <div style={{ background: 'var(--danger-bg)', color: 'var(--danger-text)', padding: '0.75rem 1rem', borderRadius: 'var(--radius-sm)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem' }}>
-                <AlertCircle size={16} />
+                <FaExclamationCircle size={15} />
                 {error}
               </div>
             )}
@@ -158,4 +157,3 @@ const Handover = () => {
 };
 
 export default Handover;
-

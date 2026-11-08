@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { bookingService } from '../services/bookingService';
 import { useAuth } from '../context/AuthContext';
 import Loading from '../components/Loading';
-import { Key, RotateCcw, CheckCircle2, XCircle, ArrowRight } from 'lucide-react';
+import { FaKey, FaUndo, FaCheck, FaTimes } from 'react-icons/fa';
 
 const OwnerBookings = () => {
   const { user } = useAuth();
@@ -99,23 +99,23 @@ const OwnerBookings = () => {
                 {booking.status === 'pending' && (
                   <>
                     <button onClick={() => handleUpdateStatus(booking.id, 'approved')} className="btn btn-primary btn-sm">
-                      <CheckCircle2 size={14} /> Accept Request
+                      <FaCheck size={12} /> Accept Request
                     </button>
                     <button onClick={() => handleUpdateStatus(booking.id, 'cancelled')} className="btn btn-secondary btn-sm" style={{ color: '#EF4444' }}>
-                      <XCircle size={14} /> Decline
+                      <FaTimes size={12} /> Decline
                     </button>
                   </>
                 )}
 
                 {booking.status === 'approved' && (
                   <Link to={`/handover/${booking.id}`} className="btn btn-primary btn-sm">
-                    <Key size={14} /> Verify Handover (Input Renter's OTP)
+                    <FaKey size={13} /> Verify Handover (Input Renter's OTP)
                   </Link>
                 )}
 
                 {booking.status === 'active' && (
                   <Link to={`/return-tool/${booking.id}`} className="btn btn-primary btn-sm">
-                    <RotateCcw size={14} /> Verify Return & Refund Deposit
+                    <FaUndo size={13} /> Verify Return & Refund Deposit
                   </Link>
                 )}
 
@@ -132,4 +132,3 @@ const OwnerBookings = () => {
 };
 
 export default OwnerBookings;
-

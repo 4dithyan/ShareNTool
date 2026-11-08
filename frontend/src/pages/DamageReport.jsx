@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { bookingService } from '../services/bookingService';
 import { useAuth } from '../context/AuthContext';
 import Loading from '../components/Loading';
-import { AlertTriangle, CheckCircle2, ShieldAlert } from 'lucide-react';
+import { FaExclamationTriangle, FaCheckCircle } from 'react-icons/fa';
 
 const DamageReport = () => {
   const { bookingId } = useParams();
@@ -64,7 +64,7 @@ const DamageReport = () => {
       <div className="card" style={{ padding: '2.5rem' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ width: 56, height: 56, borderRadius: '50%', background: 'var(--danger-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1rem', border: '1px solid #FECACA' }}>
-            <AlertTriangle size={26} color="#DC2626" />
+            <FaExclamationTriangle size={22} color="#DC2626" />
           </div>
           <h1 style={{ fontSize: '1.8rem', marginBottom: '0.4rem' }}>Report Tool Damage / Issue</h1>
           <p style={{ color: 'var(--text-muted)' }}>
@@ -75,7 +75,7 @@ const DamageReport = () => {
         {submitted ? (
           <div style={{ textAlign: 'center', padding: '1rem 0' }}>
             <div style={{ width: 64, height: 64, borderRadius: '50%', background: '#ECFDF5', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.25rem' }}>
-              <CheckCircle2 size={36} color="#10B981" />
+              <FaCheckCircle size={32} color="#10B981" />
             </div>
             <h3 style={{ fontSize: '1.4rem', color: '#065F46', marginBottom: '0.5rem' }}>
               Report Logged Under Escrow Review
@@ -153,4 +153,3 @@ const DamageReport = () => {
 };
 
 export default DamageReport;
-
